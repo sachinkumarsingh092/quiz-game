@@ -2,6 +2,7 @@ package quiz
 
 import (
 	"encoding/csv"
+	"fmt"
 	"log"
 	"os"
 )
@@ -21,4 +22,21 @@ func ReadCsvFile(filePath string) ([][]string, error) {
 	}
 
 	return records, nil
+}
+
+// ParseQuiz : Run the quiz and evaluate.
+func ParseQuiz(records [][]string) {
+	var correct int = 0
+	for i := 0; i < len(records); i++ {
+		fmt.Printf("What's %s equal to?\n", records[i][0])
+
+		var answer string
+		fmt.Scanln(&answer)
+
+		if answer == records[i][1] {
+			correct++
+		}
+	}
+
+	fmt.Printf("\n<<<< You scored %v/%v. >>>>\n", correct, len(records))
 }
