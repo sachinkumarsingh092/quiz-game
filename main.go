@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"log"
 
 	"github.com/sachinkumarsingh092/quiz-game/quiz"
@@ -19,5 +20,12 @@ func main() {
 		log.Fatal("no such file.")
 	}
 
-	quiz.ParseQuiz(records)
+	/// TODO : make flag for time
+	correct, err := quiz.EvalQuiz(records, 10)
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Printf("\n<<<< You scored %v/%v. >>>>\n", correct, len(records))
 }
