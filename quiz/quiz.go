@@ -67,14 +67,14 @@ func runQuiz(question, answer string, ansChan <-chan string, quit <-chan time.Ti
 	for {
 		select {
 		case <-quit:
-			return -1, fmt.Errorf("Time out")
+			return -1, fmt.Errorf("\nTime out")
 
 		case input := <-ansChan:
 			score := 0
 			if strings.Compare(strings.Trim(strings.ToLower(input), "\n"), answer) == 0 {
 				score = 1
 			} else {
-				return 0, fmt.Errorf("Wrong Answer")
+				return 0, fmt.Errorf("\nWrong Answer")
 			}
 			return score, nil
 		}

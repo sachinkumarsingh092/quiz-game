@@ -9,19 +9,17 @@ import (
 )
 
 func main() {
+	// Flags
+	filename := flag.String("filename", "./problems/problems.csv", "To use a given CSV file for quiz.")
+	timeLimit := flag.Int("time", 30, "Time limit for the quiz.")
 	flag.Parse()
-	filename := flag.Arg(0)
-	if filename == "" {
-		filename = "./problems/problems.csv"
-	}
 
-	records, err := quiz.ReadCsvFile(filename)
+	records, err := quiz.ReadCsvFile(*filename)
 	if err != nil {
 		log.Fatal("no such file.")
 	}
 
-	/// TODO : make flag for time
-	correct, err := quiz.EvalQuiz(records, 10)
+	correct, err := quiz.EvalQuiz(records, *timeLimit)
 
 	if err != nil {
 		fmt.Println(err)
