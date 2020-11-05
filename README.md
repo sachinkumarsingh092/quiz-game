@@ -1,6 +1,8 @@
 # quiz-game
 A practice quiz game.
 
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/sachinkumarsingh092/quiz-game/)](https://pkg.go.dev/github.com/sachinkumarsingh092/quiz-game/)
+
 ### Usage
 
 The `-help` option prints the following usage:
