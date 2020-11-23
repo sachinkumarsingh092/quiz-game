@@ -2,6 +2,7 @@
 A practice quiz game.
 
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/sachinkumarsingh092/quiz-game/)](https://pkg.go.dev/github.com/sachinkumarsingh092/quiz-game/)
+[![Go Report Card](https://goreportcard.com/badge/github.com/sachinkumarsingh092/quiz-game)](https://goreportcard.com/report/github.com/sachinkumarsingh092/quiz-game)
 
 ### Usage
 
